@@ -65,9 +65,31 @@ Edit `src/scanner.l`, then:
 ./scripts/run_golden.sh < testcases/comment.txt
 ```
 
+**Run your scanner interactively:**
+```bash
+./scripts/run_scanner.sh < testcases/comment.txt
+```
+
+**Diff your output against golden:**
+```bash
+diff <(./scripts/run_scanner.sh < testcases/comment.txt) <(./scripts/run_golden.sh < testcases/comment.txt)
+```
+
 **Drop into a shell inside the container:**
 ```bash
 docker compose run --rm hw1 bash
+```
+
+Inside the container you can compile and test manually:
+```bash
+# compile
+make -C /hw1/build
+
+# run your scanner
+/hw1/build/scanner < /hw1/testcases/comment.txt
+
+# diff against golden
+diff <(/hw1/build/scanner < /hw1/testcases/comment.txt) <(golden_scanner < /hw1/testcases/comment.txt)
 ```
 
 **Add your own testcases:**
