@@ -65,11 +65,6 @@ Edit `src/scanner.l`, then:
 ./scripts/run_golden.sh < testcases/comment.txt
 ```
 
-**Run your scanner interactively:**
-```bash
-./scripts/run_scanner.sh < testcases/comment.txt
-```
-
 **Diff your output against golden:**
 ```bash
 diff <(./scripts/run_scanner.sh < testcases/comment.txt) <(./scripts/run_golden.sh < testcases/comment.txt)
