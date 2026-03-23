@@ -83,6 +83,7 @@ docker compose run --rm hw1 bash
 Inside the container you can compile and test manually:
 ```bash
 # compile
+cp /hw1/src/scanner.l /hw1/build/
 make -C /hw1/build
 
 # run your scanner
